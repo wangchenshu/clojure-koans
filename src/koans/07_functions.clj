@@ -28,16 +28,13 @@
   "One function can beget another"
   ;     ((fn [x y] (+ x y)) 4 5)
   ;     ((fn [x y] (#(+ %1 %2) x y)) 4 5)
-  ; (= 9 (((fn [] ___)) 4 5))
-
-
-
+  (= 9 (((fn [] +)) 4 5))
 
   "Functions can also take other functions as input"
   ; (= 20 ((fn [f] (f 4 5))
   ;          (fn [x y] (#(* %1 %2) x y))))
   (= 20 ((fn [f] (f 4 5))
-           ___))
+           *))
 
   "Higher-order functions take function arguments"
   (= 25 (___
